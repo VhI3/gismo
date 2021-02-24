@@ -35,6 +35,26 @@ endif()
 
   #generate_export_header(${PROJECT_NAME})
 
+## #################################################################
+## Add library matplotplusplus VHI3  ********** Start **************
+## #################################################################
+include(FetchContent)
+set(FETCHCONTENT_BASE_DIR "${PROJECT_SOURCE_DIR}/extensions/matplotplusplus")
+FetchContent_Declare(matplotplusplus
+        GIT_REPOSITORY https://github.com/alandefreitas/matplotplusplus
+        GIT_TAG origin/master # or whatever tag you want
+        )
+FetchContent_GetProperties(matplotplusplus)
+if(NOT matplotplusplus_POPULATED)
+    FetchContent_Populate(matplotplusplus)
+    add_subdirectory(${matplotplusplus_SOURCE_DIR} ${matplotplusplus_BINARY_DIR} EXCLUDE_FROM_ALL)
+endif()
+target_link_libraries(${PROJECT_NAME} matplot)
+## #################################################################
+## Add library matplotplusplus VHI3  ********** End** **************
+## #################################################################
+
+
   set_target_properties(${PROJECT_NAME} PROPERTIES
   #https://community.kde.org/Policies/Binary_Compatibility_Issues_With_C%2B%2B
   VERSION "${${PROJECT_NAME}_VERSION}"
