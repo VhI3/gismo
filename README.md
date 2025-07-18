@@ -1,2 +1,3 @@
-# gismo
- This Version is working on windows 10.
+
+Currently working on adapting and extending an isogeometric analysis (IGA) framework for structural mechanics applications. The primary contribution is enabling full compatibility with Windows systems using Visual Studio and the Microsoft Visual C++ toolchain. The gsElasticity module has been expanded to include multiple structural benchmarks. Additionally, Matplot++ has been embedded for visualization of force-displacement responses. The project is ongoing and aims to deepen my understanding of IGA while making the framework more accessible and modular for further research and development. 
+ 
